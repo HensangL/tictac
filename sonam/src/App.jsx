@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Confetti from 'react-confetti'
 
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
@@ -66,6 +67,7 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center p-4">
+      
       <h1 className="text-3xl font-bold mb-6 text-gray-800">Tic-Tac-Toe</h1>
 
       {/* Game Status */}
@@ -74,7 +76,7 @@ function App() {
           winner === "draw" ? (
             <p className="text-yellow-600">It's a draw!</p>
           ) : (
-            <p className="text-green-600">Player {winner} wins!</p>
+            <p className="text-green-600">Player {winner}<Confetti/> wins!</p>
           )
         ) : (
           <p className="text-gray-700">Current Player: <span className={currentPlayer === "X" ? "text-red-500" : "text-blue-500"}>{currentPlayer}</span></p>
@@ -89,7 +91,7 @@ function App() {
       {/* Reset Button */}
       <button
         onClick={resetGame}
-        className="px-4 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
+        className="px-5 py-2 bg-gray-800 text-white rounded-lg hover:bg-gray-700 transition-colors"
       >
         Reset Game
       </button>
