@@ -1,1 +1,8 @@
 @import "tailwindcss";
+.Calculator-buttons {
+    padding: 1rem;      /* p-4 = 16px (1rem) */
+    padding: 25px;
+    background-color: white;
+    border-radius: 20px;
+    padding-right: 35px;
+  }
